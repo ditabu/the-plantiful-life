@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // Create your User Model
 
-const userSchema = new mongoose.Schema({
+const plantistaSchema = new mongoose.Schema({
     name: String, 
     email: String,
     avatar: String, 
@@ -10,4 +10,4 @@ const userSchema = new mongoose.Schema({
     googleId: String
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('Plantista', plantistaSchema);
