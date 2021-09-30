@@ -18,6 +18,8 @@ require('./config/database');
 // configure Passport
 require('./config/passport');
 
+const indexRoutes = require('./routes/index');
+
 
 
 // view engine setup
@@ -54,7 +56,7 @@ app.use('/', indexRoutes);
 
 // invalid request, send 404 page
 app.use(function(req, res) {
-  res.status(404).send('Cant find that!');
+  res.status(404).send('Water Your Plants!');
 });
 
 module.exports = app;
