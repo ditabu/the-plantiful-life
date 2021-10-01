@@ -19,6 +19,7 @@ require('./config/database');
 require('./config/passport');
 
 const indexRoutes = require('./routes/index');
+const plantistasRoutes = require('./routes/plantistas');
 
 
 
@@ -52,7 +53,7 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 app.use('/', indexRoutes);
-
+app.use('/', plantistasRoutes);
 
 // invalid request, send 404 page
 app.use(function(req, res) {

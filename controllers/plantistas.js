@@ -15,7 +15,7 @@ function index(req, res, next) {
   // Default to sorting by name
   let sortKey = req.query.sort || 'name';
   Plantista.find(modelQuery)
-  .sort(sortKey).exec(function(err, students) {
+  .sort(sortKey).exec(function(err, plantistas) {
     if (err) return next(err);
     // Passing search values, name & sortKey, for use in the EJS
     res.render('plantistas/index', {
