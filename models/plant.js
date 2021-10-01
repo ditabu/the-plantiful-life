@@ -13,9 +13,9 @@ const careLogSchema = new mongoose.Schema({
     plantName: String,
     plantSpecies: String,
     lighting: String,
-    watering:  String,
-    grooimg:  String,
-    climate:  String,
+    watering: String,
+    grooimg: String,
+    climate: String,
     careLog: [careLogSchema],
     timestamps: true   
 });

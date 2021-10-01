@@ -11,6 +11,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
-    <a href="/auth/google"> Login with Google</a>
+    <a href="" class="brand-logo left">The Plantiful Life</a>
+<!-- Add login UI here -->
+<ul class="right">
+	<li>
+	<% if (user) { %>
+		<a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+    <% } else { %>
+        <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
+    <% } %>
+    </li>
+</ul>
 </body>
 </html>
