@@ -1,5 +1,5 @@
-var router = require('express').Router();
-var plantistasCtrl = require('../controllers/plantistas');
+const router = require('express').Router();
+const plantistasCtrl = require('../controllers/plantistas');
 
 // GET /students
 router.get('/plantistas', plantistasCtrl.index);

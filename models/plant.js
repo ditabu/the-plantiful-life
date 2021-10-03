@@ -12,9 +12,9 @@ const careLogSchema = new mongoose.Schema({
     plantOwner: { type: Schema.Types.ObjectId, ref: 'Plantista' },   
     plantName: String,
     plantSpecies: String,
-    lighting: String,
-    watering: String,
-    grooimg: String,
+    light: String,
+    water: String,
+    groom: String,
     climate: String,
     careLog: [careLogSchema],
     timestamps: true   
