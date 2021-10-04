@@ -1,10 +1,11 @@
 const router = require('express').Router();
 const plantistasCtrl = require('../controllers/plantistas');
 
+
 // GET /plantistas
 router.get('/plantistas', plantistasCtrl.index);
 router.get('/plantistas/new', plantistasCtrl.new);
-router.post('/', plantistasCtrl.create);
+router.post('/plants/new', plantistasCtrl.create);
 
 
 

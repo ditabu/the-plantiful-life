@@ -1,4 +1,6 @@
 const Plantista = require('../models/plantista');
+const Plant = require('../models/plant');
+const plantsCtrl = require('../controllers/plants');
 
 module.exports = {
   index, 
@@ -35,6 +37,7 @@ function newPlantistaPage(req, res){
 };
 
 function create(req, res){
-  console.log(req.body, 'create')
-  res.send('added new plant');
+  console.log(req.body, 'send to new plant add page')
+  res.render('plants/new');
+
 };
