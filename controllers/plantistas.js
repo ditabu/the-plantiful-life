@@ -1,7 +1,9 @@
 const Plantista = require('../models/plantista');
 
 module.exports = {
-  index
+  index, 
+  new: newPlantistaPage,
+  // create
 
 };
 
@@ -27,4 +29,12 @@ function index(req, res, next) {
   });
 }
 
+function newPlantistaPage(req, res){
+  console.log('attempt to hit new route')
+  res.render('plantistas/new');
+};
 
+// function create(req, res){
+//   console.log(req.body, 'create')
+//   res.send('added new plant');
+// };

@@ -20,7 +20,7 @@ require('./config/passport');
 
 const indexRoutes = require('./routes/index');
 const plantistasRoutes = require('./routes/plantistas');
-const plantsRoutes = require('./routes/plants');
+
 
 
 // view engine setup
@@ -54,7 +54,7 @@ app.use(function (req, res, next) {
 // mount all routes with appropriate base paths
 app.use('/', indexRoutes);
 app.use('/', plantistasRoutes);
-app.use('/plants', plantsRoutes);
+
 
 // invalid request, send 404 page
 app.use(function(req, res) {

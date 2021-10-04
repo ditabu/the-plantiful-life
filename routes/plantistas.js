@@ -1,8 +1,11 @@
 const router = require('express').Router();
 const plantistasCtrl = require('../controllers/plantistas');
 
-// GET /students
+// GET /plantistas
 router.get('/plantistas', plantistasCtrl.index);
+router.get('/plantistas/new', plantistasCtrl.new);
+// router.post('/', plantistasCtrl.create);
+
 
 
 // Authorizing the user to use a route
