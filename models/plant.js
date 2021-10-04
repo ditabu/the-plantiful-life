@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 const careLogSchema = new mongoose.Schema({
   watered: Date,
   groomed: Date,
-  timestamps: true
 });
   
   // in a models/plant.js file 
@@ -16,8 +15,8 @@ const careLogSchema = new mongoose.Schema({
     water: String,
     groom: String,
     climate: String,
-    careLog: [careLogSchema],
-    timestamps: true   
+    date: Date,
+    careLog: [careLogSchema],  
 });
    
 

@@ -3,7 +3,7 @@ const Plantista = require('../models/plantista');
 module.exports = {
   index, 
   new: newPlantistaPage,
-  // create
+  create
 
 };
 
@@ -34,7 +34,7 @@ function newPlantistaPage(req, res){
   res.render('plantistas/new');
 };
 
-// function create(req, res){
-//   console.log(req.body, 'create')
-//   res.send('added new plant');
-// };
+function create(req, res){
+  console.log(req.body, 'create')
+  res.send('added new plant');
+};
