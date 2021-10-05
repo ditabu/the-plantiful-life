@@ -20,7 +20,7 @@ module.exports = {
 function show(req, res){
     Plant.findById(req.params.id, function(err, plantDoc) {
         console.log(plantDoc, 'plant doc show')
-        res.render('plants/show', { plant: 'Plant Details', plant: plantDoc });
+        res.render('plants/show', { plantName: 'Plant Details', plant: plantDoc });
     });
 }
 

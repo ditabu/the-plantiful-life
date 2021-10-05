@@ -21,7 +21,7 @@ require('./config/passport');
 const indexRoutes = require('./routes/index');
 const plantistasRoutes = require('./routes/plantistas');
 const plantsRoutes = require('./routes/plants');
-
+const careLogsRoutes = require('./routes/careLogs');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -55,6 +55,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRoutes);
 app.use('/', plantistasRoutes);
 app.use('/plants', plantsRoutes);
+app.use('/careLogs', careLogsRoutes);
 
 
 // invalid request, send 404 page
