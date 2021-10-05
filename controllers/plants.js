@@ -9,7 +9,7 @@ module.exports = {
     show, 
     // delete: deletePlant
 
-}
+};
 
 // function deletePlant(req, res){
 //     Plant.deleteOne(req.params.id);
@@ -40,11 +40,11 @@ function newPlant(req, res){
 };
 
 function create(req, res){
-    console.log(req.body) //matches the plantSchema
+    console.log(req.body, 'created new plant') //matches the plantSchema
     Plant.create(req.body, function(err, createdPlant){
         if(err) return res.direct('/plants/new');
-        console.log(createdPlant, "createdPlant");
-        res.redirect('/plants')
+        console.log(createdPlant, 'createdPlant');
+        res.redirect('/plants');
     })
     //res.send('added new plant') //works when I click on Add New Plant button
 };

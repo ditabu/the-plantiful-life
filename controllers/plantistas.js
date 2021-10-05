@@ -1,6 +1,6 @@
 const Plantista = require('../models/plantista');
 const Plant = require('../models/plant');
-const plantsCtrl = require('../controllers/plants');
+
 
 module.exports = {
   index, 

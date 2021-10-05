@@ -55,7 +55,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRoutes);
 app.use('/', plantistasRoutes);
 app.use('/plants', plantsRoutes);
-app.use('/careLogs', careLogsRoutes);
+app.use('/', careLogsRoutes);
 
 
 // invalid request, send 404 page
