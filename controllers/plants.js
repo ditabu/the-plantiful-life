@@ -5,14 +5,22 @@ const Plant = require('../models/plant');
 module.exports = {
     new: newPlant,
     create, 
-    index
+    index, 
+    show
+
 }
 
+function show(req, res){
+    Plant.findById(req.params.id, function(err, plantDoc) {
+        console.log(plantDoc, 'plant doc show')
+        res.render('plants/show', { plant: 'Plant Details', plantDoc });
+    });
+}
 
 function index(req, res){
     Plant.find({}, function(err, plantsDoc){
-        console.log(err, 'why is this an error')
-        // console.log(plantsDoc, 'plants doc')
+        // console.log(err, 'why is this an error')
+        console.log(plantsDoc, 'plants doc')
         res.render('plants/index', {
             plants: plantsDoc
         })

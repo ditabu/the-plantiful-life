@@ -1,20 +1,21 @@
+* {
+  box-sizing: border-box;
+  font-family: Helvetica;
+  color: olivedrab
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+body > nav {
+  grid-area: nav;
+  background-color: #225a68;
+  align-items: center;
+  padding: 0 20px 0 30px;
+}
+
 .brand-logo {
   margin-left: 30px;
-}
-
-.card .card-content .card-title {
-  margin-bottom: 10px;
-}
-
-#search-row form {
-  padding-top: 20px;
-}
-
-.plantista-name {
-  position: relative;
-  top: -5px;
-}
-
-.collection-item form {
-  margin-top: -5px;
 }

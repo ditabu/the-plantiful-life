@@ -12,10 +12,6 @@
           <tr>
             <th>Plant Name</th>
             <th>Plant<br>Species</th>
-            <th>Light</th>
-            <th>Water</th>
-            <th>Groom</th>
-            <th>Climate</th>
           </tr>
         </thead>
         <tbody>
@@ -23,10 +19,7 @@
             <tr>
               <td><%= p.plantName %></td>
               <td><%= p.plantSpecies %></td>
-              <td><%= p.light %></td>
-              <td><%= p.water %></td>
-              <td><%= p.groom %></td>
-              <td><%= p.climate %></td>
+              <td><a href="/plants/<%= p._id %>">DETAILS</a></td>
             </tr>
             <% }); %>
           </tbody>
