@@ -7,15 +7,23 @@ module.exports = {
     create, 
     index, 
     show, 
+    delete: deleteOne,
     delete: deletePlant,
 
 };
 
 function deletePlant(req, res){
     Plant.deleteOne(req.params.id);
-
+    console.log('deleting a plant')
     res.redirect('/plants');
 }
+
+function deleteOne(id){
+    // i want to delete a plant from my added list
+    const idx = plants.findIndex(plant => plant.id === parseInt(id));
+    plants.splice(idx, 1);
+}
+
 
 function show(req, res){
     //find a plant by ID to see details
