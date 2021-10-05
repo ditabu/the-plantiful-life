@@ -25,7 +25,7 @@
     <br>
     <br>
     <h2>Care Logs</h2>
-    <form id="care-log-form" action="/plants/<%= plant._id %>/careLogs" method="POST">
+    <form id="care-log-form" method="POST" action="/plants/<%= plant._id %>/careLogs">
         <label>Watered</label>
         <input type="datetime-local" name="watered">
         <label>Groomed</label>
