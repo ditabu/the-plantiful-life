@@ -6,14 +6,21 @@ module.exports = {
     new: newPlant,
     create, 
     index, 
-    show
+    show, 
+    // delete: deletePlant
 
 }
+
+// function deletePlant(req, res){
+//     Plant.deleteOne(req.params.id);
+
+//     res.redirect('/plants');
+// }
 
 function show(req, res){
     Plant.findById(req.params.id, function(err, plantDoc) {
         console.log(plantDoc, 'plant doc show')
-        res.render('plants/show', { plant: 'Plant Details', plantDoc });
+        res.render('plants/show', { plant: 'Plant Details', plant: plantDoc });
     });
 }
 
