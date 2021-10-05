@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>the Plantiful Life</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
+<%- include('../partials/header') %>
     <a href="/plantistas/new" class="brand-logo left">The Plantiful Life</a>
     <h1>What's In Yo Pot?</h1>
     <form id="new-form" action="/plants" method="POST">
@@ -42,5 +33,4 @@
         <input type="hidden" value="<%= user.id %>" name="plantOwner"/>
         <input type="submit" value="Add New Plant">
       </form>
-</body>
-</html>
+<%- include('../partials/footer') %>
