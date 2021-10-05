@@ -21,6 +21,7 @@
         <div><%= plant.groom %></div>
         <div>Climate:</div>
         <div><%= plant.climate %></div>
+        <div><%= plant.plantOwner %></div>
     </section>
     <br>
     <br>
@@ -32,5 +33,26 @@
         <input type="datetime-local" name="groomed">
         <input type="submit" value="Add Care Log">
     </form>
+
+    <% if (plant.careLog.length) { %>
+        <table>
+          <thead>
+            <tr>
+              <th>Watered</th>
+              <th>Groomed</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% plant.careLog.forEach(function(p) { %>
+              <tr>
+                <td><%= p.watered %></td>
+                <td><%= p.groomed %></td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      <% } else { %>
+        <h5>No Care Logs Yet</h5>
+      <% } %>
 </body>
 </html>

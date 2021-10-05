@@ -13,7 +13,7 @@ module.exports = {
 function index(req, res, next) {
   console.log(req.query)
   console.log(req.user)
-  // Make the query object to use with Student.find based up
+  // Make the query object to use with Plantista.find based up
   // the user has submitted the search form or now
   let modelQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {};
   // Default to sorting by name
@@ -32,6 +32,7 @@ function index(req, res, next) {
 }
 
 function newPlantistaPage(req, res){
+  //create new plantista page with buttons on what they would like to do today
   console.log('attempt to hit new route')
   res.render('plantistas/new');
 };

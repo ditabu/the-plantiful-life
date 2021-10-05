@@ -15,12 +15,13 @@ passport.use(new GoogleStrategy({
     // refer to the lesson plan from earlier today in order to set this up
     console.log(profile, "Profile")
 
-
+    //search db and see if user exists
     Plantista.findOne({'googleId': profile.id}, function (err, plantistaDoc){
       if (err) return cb(err);
       if (plantistaDoc) {
         return cb(null, plantistaDoc);
       } else {
+        //create the user in db
         const newPlantista = new Plantista({
           name: profile.displayName,
           email: profile.emails[0].value,
@@ -37,6 +38,7 @@ passport.use(new GoogleStrategy({
 ));
 
 passport.serializeUser(function(plantista, done) {
+  //plantista, doc from db, done is from passport
   done(null, plantista.id);
 });
 

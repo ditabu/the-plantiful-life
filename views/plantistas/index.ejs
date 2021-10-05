@@ -26,5 +26,9 @@
     <form id="new-plantista-form" action="/plantistas/new" method="GET">
     <button>Begin your journey!</button>
     </form>
+    <% if (user) { %> 
+       <h1>Hello <%= user.name %> </h1> 
+    <% } %> 
+    
 </body>
 </html>
