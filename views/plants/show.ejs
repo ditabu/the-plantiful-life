@@ -1,21 +1,27 @@
 <%- include('../partials/header') %>
 
-    <section id="show-details">
+<form class="edit-form" action="/plants/<%= plant._id %> " method="POST"> 
         <h1>Plant Details</h1>
         <div>Plant Name:</div>
-        <div><%= plant.plantName %></div>
+        <input value="<%= plant.plantName %>" name="plantName" >
         <div>Plant Species:</div>
-        <div><%= plant.plantSpecies %></div>
+        <input value="<%= plant.plantSpecies %>" name="plantSpecies" >
         <div>Light:</div>
-        <div><%= plant.light %></div>
+        <input value="<%= plant.light %>" name="light" >
         <div>Water:</div>
-        <div><%= plant.water %></div>
+        <input value="<%= plant.water %>"name="water">
         <div>Groom:</div>
-        <div><%= plant.groom %></div>
+        <input value="<%= plant.groom %>" name="groom">
         <div>Climate:</div>
-        <div><%= plant.climate %></div>
-        <div><%= plant.plantOwner %></div>
-    </section>
+        <input value="<%= plant.climate %>" name="climate">
+
+   
+    <% if (plant.plantOwner.toString()===currentUser.toString()){ %>
+      
+      <button type="submit">edit</button>
+      <% } %> 
+  </form>
+
     <br>
     <br>
     <h2>Care Logs</h2>

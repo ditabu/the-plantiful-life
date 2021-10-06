@@ -10,28 +10,29 @@ module.exports = {
     show, 
     delete: deletePlant,
     edit,
-    
-
 };
 
 function edit(req, res) {
-    Plant.findById(req.params.id, function(err, plant) {
+    console.log(req.body)
+    Plant.findByIdAndUpdate(req.params.id, req.body, function(err, plant) {
+    console.log('edit plant: ', plant)
+    let currentUser = req.user ? req.user._id : ''
       // Verify plant is "owned" by logged in user
-    //   if (!plant.user.equals(plantOwner._id)) return res.redirect('/plants');
-      res.render('/plants', {plant});
+    // res.render('plants/show', { plant, currentUser });
+    res.redirect(`/plants/${req.params.id}`)
     });
-  }
+}
 
 function deletePlant(req, res){
     // if req.user equals plant findbyId if it matches, then redirect, and i need an edit
     
     Plant.deleteOne({_id: req.params.id}, function(err, plant) {
         console.log('deleted plant: ', plant)
+        let currentUser = req.user ? req.user._id : ''
         // if (!plant.plantOwner.equals(plantOwner._id)) return res.redirect('/plants');
         console.log('deleting a plant')
         res.redirect('/plants');
-   
-}
+   }
 )};
     
 
@@ -39,7 +40,8 @@ function show(req, res){
     //find a plant by ID to see details
     Plant.findById(req.params.id, function(err, plantDoc) {
         console.log(plantDoc, 'plant doc show')
-        res.render('plants/show', { plantName: 'Plant Details', plant: plantDoc });
+        let currentUser = req.user ? req.user._id : ''
+        res.render('plants/show', { plantName: 'Plant Details', plant: plantDoc, currentUser });
     });
 }
 
@@ -49,10 +51,7 @@ function index(req, res){
         // console.log(err, 'why is this an error')
         console.log(plantsDoc, 'plants doc')
         let currentUser = req.user ? req.user._id : ''
-        res.render('plants/index', {
-            plants: plantsDoc,
-            currentUser
-        })
+        res.render('plants/index', { plants: plantsDoc, currentUser })
     })
 };
 
@@ -61,15 +60,7 @@ function newPlant(req, res){
     res.render('plants/new');
 };
 
-// function create(req, res) {
-// 	console.log(req.body, 'created new plant')
-//     req.body.user = req.user._id
-//     const newPlant = new Plant(req.body)
-//     newPlant.save(function (err) {
-// console.log(createdPlant, 'createdPlant');
-//         res.redirect('/plants');
-//     })
-// };
+
 function create(req, res) {
     console.log(req.body, 'created new plant') //matches the plantSchema
     // if req.user else redirect to login page (homepage)
@@ -90,3 +81,13 @@ function create(req, res) {
 //         res.redirect('/plants');
 //     })
 // }
+
+// function create(req, res) {
+// 	console.log(req.body, 'created new plant')
+//     req.body.user = req.user._id
+//     const newPlant = new Plant(req.body)
+//     newPlant.save(function (err) {
+// console.log(createdPlant, 'createdPlant');
+//         res.redirect('/plants');
+//     })
+// };
