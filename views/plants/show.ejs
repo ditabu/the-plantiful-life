@@ -3,18 +3,33 @@
 <form class="edit-form" action="/plants/<%= plant._id %> " method="POST"> 
         <h1>Plant Details</h1>
         <div>Plant Name:</div>
-        <input value="<%= plant.plantName %>" name="plantName" >
+        <input value="<%= plant.plantName %>" name="plantName">
         <div>Plant Species:</div>
-        <input value="<%= plant.plantSpecies %>" name="plantSpecies" >
+        <input value="<%= plant.plantSpecies %>" name="plantSpecies">
         <div>Light:</div>
-        <input value="<%= plant.light %>" name="light" >
+        <select value="<%= plant.light %>" name="light">
+          <option value="LOW">LOW</option>
+          <option value="MEDIUM">MEDIUM</option>
+          <option value="HIGH">HIGH</option>
+        </select>
         <div>Water:</div>
-        <input value="<%= plant.water %>"name="water">
+        <select value="<%= plant.water %>"name="water">
+          <option value="LOW">LOW</option>
+          <option value="MEDIUM">MEDIUM</option>
+          <option value="HIGH">HIGH</option>
+        </select>
         <div>Groom:</div>
-        <input value="<%= plant.groom %>" name="groom">
+        <select value="<%= plant.groom %>" name="groom">
+          <option value="LOW">LOW</option>
+          <option value="MEDIUM">MEDIUM</option>
+          <option value="HIGH">HIGH</option>
+        </select>
         <div>Climate:</div>
-        <input value="<%= plant.climate %>" name="climate">
-
+        <select value="<%= plant.climate %>" name="climate">
+          <option value="COLD">COLD</option>
+          <option value="DRY">DRY</option>
+          <option value="HUMID">HUMID</option>
+        </select>
    
     <% if (plant.plantOwner.toString()===currentUser.toString()){ %>
       
