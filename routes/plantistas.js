@@ -4,8 +4,8 @@ const plantistasCtrl = require('../controllers/plantistas');
 
 // GET /plantistas
 router.get('/plantistas', plantistasCtrl.index);
-router.get('/plantistas/new', plantistasCtrl.new);
-router.post('/plants/new', plantistasCtrl.create);
+router.get('/plantistas/new', isLoggedIn, plantistasCtrl.new);
+router.post('/plants/new', isLoggedIn, plantistasCtrl.create);
 
 
 

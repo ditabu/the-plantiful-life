@@ -4,7 +4,7 @@ const Plant = require('../models/plant');
 
 module.exports = {
   index, 
-  new: newPlantistaPage,
+  new: newPlantista,
   create
 
 };
@@ -31,7 +31,7 @@ function index(req, res, next) {
   });
 }
 
-function newPlantistaPage(req, res){
+function newPlantista(req, res){
   //create new plantista page with buttons on what they would like to do today
   console.log('attempt to hit new route')
   res.render('plantistas/new');
