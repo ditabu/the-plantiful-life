@@ -57,7 +57,6 @@ app.use('/', plantistasRoutes);
 app.use('/plants', plantsRoutes);
 app.use('/', careLogsRoutes);
 
-
 // invalid request, send 404 page
 app.use(function(req, res) {
   res.status(404).send('Water Your Plants!');

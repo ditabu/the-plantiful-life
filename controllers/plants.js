@@ -7,22 +7,25 @@ module.exports = {
     create, 
     index, 
     show, 
-    delete: deleteOne,
+    // delete: deleteOne,
     delete: deletePlant,
 
 };
 
 function deletePlant(req, res){
-    Plant.deleteOne(req.params.id);
+    Plant.deleteOne({_id: req.params.id}, function(err, deleted) {
     console.log('deleting a plant')
     res.redirect('/plants');
+   
 }
+)};
+    
 
-function deleteOne(id){
-    // i want to delete a plant from my added list
-    const idx = plants.findIndex(plant => plant.id === parseInt(id));
-    plants.splice(idx, 1);
-}
+// function deleteOne(id){
+//     // i want to delete a plant from my added list
+//     const idx = plants.findIndex(plant => plant.id === parseInt(id));
+//     plants.splice(idx, 1);
+// }
 
 
 function show(req, res){
