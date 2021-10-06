@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
-
-    <a href="/plantistas/new" class="brand-logo left">The Plantiful Life</a>  
-    <h1>Welcome to The Plantiful Life!</h1>
+<% if (user) { %> 
+    <h1>Welcome to The Plantiful Life, <%= user.name %>!</h1> 
+ <% } %> 
     <p>What would you like to do today?</p>
     <form id="new-plants-form" action="/plants/new" method="POST">
         <input type="submit" value="Add A New Plant">

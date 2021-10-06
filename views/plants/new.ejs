@@ -1,5 +1,4 @@
 <%- include('../partials/header') %>
-    <a href="/plantistas/new" class="brand-logo left">The Plantiful Life</a>
     <h1>What's In Yo Pot?</h1>
     <form id="new-form" action="/plants" method="POST">
         <label>PLANT NAME</label>
@@ -30,7 +29,6 @@
           <option value="DRY">DRY</option>
           <option value="HUMID">HUMID</option>
         </select>
-        <input type="hidden" value="<%= user.id %>" name="plantOwner"/>
         <input type="submit" value="Add New Plant">
       </form>
 <%- include('../partials/footer') %>

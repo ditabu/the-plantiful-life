@@ -1,5 +1,4 @@
 <%- include('../partials/header') %>
-    <a href="/plantistas/new" class="brand-logo left">The Plantiful Life</a>
     <table id="plantList">
         <thead>
           <tr>
@@ -14,7 +13,7 @@
               <td><%= p.plantSpecies %></td>
               <td><a href="/plants/<%= p._id %>">DETAILS</a></td>
               <td><form class="delete-form" method="POST" action="/plants/<%= p._id %>?_method=DELETE"> 
-                <button type="submit">X</button></form></td>
+                <button type="submit">X</button></form></td> 
             </tr>
             <% }); %>
           </tbody>

@@ -2,17 +2,18 @@
 const Plant = require('../models/plant');
 
 
+
 module.exports = {
     new: newPlant,
     create, 
     index, 
     show, 
-    // delete: deleteOne,
     delete: deletePlant,
 
 };
 
 function deletePlant(req, res){
+    // if req.user equals plant findbyId if it matches, then redirect, and i need an edit
     Plant.deleteOne({_id: req.params.id}, function(err, deleted) {
     console.log('deleting a plant')
     res.redirect('/plants');
@@ -20,13 +21,6 @@ function deletePlant(req, res){
 }
 )};
     
-
-// function deleteOne(id){
-//     // i want to delete a plant from my added list
-//     const idx = plants.findIndex(plant => plant.id === parseInt(id));
-//     plants.splice(idx, 1);
-// }
-
 
 function show(req, res){
     //find a plant by ID to see details
@@ -52,12 +46,24 @@ function newPlant(req, res){
     res.render('plants/new');
 };
 
-function create(req, res){
+// function create(req, res) {
+// 	// console.log(req.body, 'created new plant')
+//     req.body.user = req.user._id
+//     const newPlant = new Plant(req.body)
+//     newPlant.save(function (err) {
+// // console.log(createdPlant, 'createdPlant');
+//         res.redirect('/plants');
+//     })
+// };
+function create(req, res) {
     console.log(req.body, 'created new plant') //matches the plantSchema
-    Plant.create(req.body, function(err, createdPlant){
+    // if req.user else redirect to login page (homepage)
+    Plant.create(req.body, function(err, createdPlant){        
         if(err) return console.log(err, 'this is an error'), res.redirect('/plants/new')
         console.log(createdPlant, 'createdPlant');
         res.redirect('/plants');
     })
     //res.send('added new plant') //works when I click on Add New Plant button
 };
+
+

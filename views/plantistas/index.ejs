@@ -1,10 +1,8 @@
 <%- include('../partials/header') %>
     <h1>the Plantiful Life</h1>
     <form id="new-plantista-form" action="/plantistas/new" method="GET">
+    <img src="https://i.imgur.com/hmb7RvG.jpg?1" width="1000" title="source: imgur.com" />
+    <br>
     <button>Begin your journey!</button>
     </form>
-    <% if (user) { %> 
-       <h1>Hello <%= user.name %> </h1> 
-    <% } %> 
-    
     <%- include('../partials/footer') %>
