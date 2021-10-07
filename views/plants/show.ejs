@@ -19,10 +19,8 @@
         <br>
         <br>    
     <% if (plant.plantOwner.toString()===currentUser.toString()){ %>
-      <form class="edit-form" action="/plants/<%= plant._id %> " method="POST"> 
-      <button id="small-btn">Edit</button>
+        <a href ="/plants/<%=plant._id%>/edit"><div class="small-btn">Edit</div></a>
     <% } %> 
-    </form>
     <br>
     <form id="new-plantista-form" action="/plants" method="GET">  
       <button id="small-btn">View All Plants</button>

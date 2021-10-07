@@ -46,7 +46,7 @@
     </form>
     <% } %>    
     <% if (plant.plantOwner.toString()===currentUser.toString()){ %>
-      <button id="small-btn">Edit</button>
+      <a href ="/plants/<%= plant._id %> /edit"><div class="small-btn">Edit</div></a>
     <% } %> 
     <br>
     <form id="edit-form" action="/plants" method="GET">  

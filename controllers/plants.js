@@ -17,6 +17,7 @@ function edit(req, res) {
     Plant.findByIdAndUpdate(req.params.id, req.body, function(err, plants) {
     console.log(plants, 'edit plant')
       // Verify plant is "owned" by logged in user
+    //   
     res.render('plants/edit', { plants: plant.getOne(req.params.id) });
     });
 }

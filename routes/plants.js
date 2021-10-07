@@ -8,7 +8,7 @@ router.get('/:id', plantsCtrl.show); //details page
 router.post('/', plantsCtrl.create);
 router.delete('/:id', plantsCtrl.delete);
 router.get('/:id/edit', plantsCtrl.edit);
-router.post('/:id/edit', plantsCtrl.edit);
+// router.post('/:id/edit', plantsCtrl.edit);
 
 
 module.exports = router;
