@@ -11,8 +11,8 @@ function create(req, res){
     //req.body is the carelog that we need to add to the plant doc
     //req.params.id - routes/carelogs id of the plant to add carelog to
     //1. find the plant doc, 2. add carelog to plant doc, 3. respond to the client
+    req.body.plantOwner = req.user._id
     Plant.findById(req.params.id, function(err, plantDoc){
-        
         console.log(plantDoc, 'plant doc id with carelogs')
         plantDoc.careLog.push(req.body); //careLogs is req.body and embedded in carelogs doc array
         //when we MutationEvent, tell db by saving

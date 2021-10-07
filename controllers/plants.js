@@ -20,6 +20,7 @@ function edit(req, res) {
       // Verify plant is "owned" by logged in user
     // res.render('plants/show', { plant, currentUser });
     res.redirect(`/plants/${req.params.id}`)
+    // res.redirect(`/plants/${req.params.id}`)
     });
 }
 
@@ -73,21 +74,4 @@ function create(req, res) {
     //res.send('added new plant') //works when I click on Add New Plant button
 };
 
-// function createPlant(req, res){
-//     req.user.plants(req.body);
-//     req.user.save(function(err){
-//         if(err) return console.log(err, 'this is an error'), res.redirect('/plants/new')
-//         console.log(createdPlant, 'createdPlant');
-//         res.redirect('/plants');
-//     })
-// }
 
-// function create(req, res) {
-// 	console.log(req.body, 'created new plant')
-//     req.body.user = req.user._id
-//     const newPlant = new Plant(req.body)
-//     newPlant.save(function (err) {
-// console.log(createdPlant, 'createdPlant');
-//         res.redirect('/plants');
-//     })
-// };

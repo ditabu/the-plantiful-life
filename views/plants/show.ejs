@@ -1,52 +1,53 @@
 <%- include('../partials/header') %>
-
-<form class="edit-form" action="/plants/<%= plant._id %> " method="POST"> 
-        <h1>Plant Details</h1>
-        <div>Plant Name:</div>
-        <input value="<%= plant.plantName %>" name="plantName">
-        <div>Plant Species:</div>
-        <input value="<%= plant.plantSpecies %>" name="plantSpecies">
-        <div>Light:</div>
-        <select value="<%= plant.light %>" name="light">
-          <option value="LOW">LOW</option>
-          <option value="MEDIUM">MEDIUM</option>
-          <option value="HIGH">HIGH</option>
-        </select>
-        <div>Water:</div>
-        <select value="<%= plant.water %>"name="water">
-          <option value="LOW">LOW</option>
-          <option value="MEDIUM">MEDIUM</option>
-          <option value="HIGH">HIGH</option>
-        </select>
-        <div>Groom:</div>
-        <select value="<%= plant.groom %>" name="groom">
-          <option value="LOW">LOW</option>
-          <option value="MEDIUM">MEDIUM</option>
-          <option value="HIGH">HIGH</option>
-        </select>
-        <div>Climate:</div>
-        <select value="<%= plant.climate %>" name="climate">
-          <option value="COLD">COLD</option>
-          <option value="DRY">DRY</option>
-          <option value="HUMID">HUMID</option>
-        </select>
-   
+  <form class="edit-form" action="/plants/<%= plant._id %> " method="POST"> 
+    <h1>Plant Details</h1>
+    <div>Plant Name:</div>
+      <input value="<%= plant.plantName %>" name="plantName">
+    <div>Plant Species:</div>
+      <input value="<%= plant.plantSpecies %>" name="plantSpecies">
+    <div>Light:</div>
+      <select value="<%= plant.light %>" name="light">
+        <option value="LOW">LOW</option>
+        <option value="MEDIUM">MEDIUM</option>
+        <option value="HIGH">HIGH</option>
+      </select>
+    <div>Water:</div>
+      <select value="<%= plant.water %>"name="water">
+        <option value="LOW">LOW</option>
+        <option value="MEDIUM">MEDIUM</option>
+        <option value="HIGH">HIGH</option>
+      </select>
+    <div>Groom:</div>
+      <select value="<%= plant.groom %>" name="groom">
+        <option value="LOW">LOW</option>
+        <option value="MEDIUM">MEDIUM</option>
+        <option value="HIGH">HIGH</option>
+      </select>
+    <div>Climate:</div>
+      <select value="<%= plant.climate %>" name="climate">
+        <option value="COLD">COLD</option>
+        <option value="DRY">DRY</option>
+        <option value="HUMID">HUMID</option>
+      </select>
     <% if (plant.plantOwner.toString()===currentUser.toString()){ %>
-      
       <button type="submit">edit</button>
-      <% } %> 
+    <% } %> 
   </form>
-
-    <br>
-    <br>
-    <h2>Care Logs</h2>
-    <p>Keep your plants alive by logging in when you water and groom your plants. Watch your plants tthrive and grow before your very eyes.</p>
-    <form id="care-log-form" method="POST" action="/plants/<%= plant._id %>/careLogs">
-        <label>Watered</label>
-        <input type="datetime-local" name="watered">
-        <label>Groomed</label>
-        <input type="datetime-local" name="groomed">
-        <input type="submit" value="Add Care Log">
+  <form id="new-plantista-form" action="/plants" method="GET">  
+    <input type="submit" value="View All Plants">
+  </form>
+  <br>
+  <br>
+  <h2>Care Logs</h2>
+  <p>Keep your plants alive by logging in when you water and groom your plants. Watch your plants tthrive and grow before your very eyes.</p>
+  <form id="care-log-form" method="POST" action="/plants/<%= plant._id %>/careLogs">
+    <label>Watered</label>
+      <input type="datetime-local" name="watered">
+    <label>Groomed</label>
+      <input type="datetime-local" name="groomed">
+    <% if (plant.plantOwner.toString()===currentUser.toString()){ %>
+      <input type="submit" value="Add Care Log">
+    <% } %> 
     </form>
 
     <% if (plant.careLog.length) { %>
