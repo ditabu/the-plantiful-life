@@ -10,7 +10,17 @@ module.exports = {
     show, 
     delete: deletePlant,
     edit,
+    update: updatePlant
 };
+
+function updatePlant(req, res) {
+    console.log(req.body, req.params, 'update Plant')
+    const currentUser = req.user ? req.user._id : ''
+    Plant.findById(req.params.id, function(err, plant) {
+        console.log(plant, 'find updated plant')
+        res.redirect('/plants/:id/edit/update', { plant, currentUser });
+    });
+}
 
 function edit(req, res) {
     console.log(req.body, req.params, 'edit')
