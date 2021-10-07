@@ -3,18 +3,18 @@
         <% if (user) { %> 
         <h3>Welcome, <%= user.name %>!</h3> 
         <% } %> 
-        <h4>What would you like to do today?</h4>
+        <p>What would you like to do today?</p>
         <form id="welcome-form" action="/plants/new" method="POST">
-            <img src="https://i.imgur.com/Sts3aaxl.jpg?1" width="500" title="source: imgur.com" />
+            <img src="https://i.imgur.com/Sts3aaxl.jpg?1" width="300" title="source: imgur.com" />
             <br>
-            <button id="small-btn">Add A New Plant</button>
+            <button id="welcome-btn">Add A New Plant</button>
         </form>
         <br>
         <br>
         <form id="welcome-form" action="/plants" method="GET">
-            <img src="https://i.imgur.com/3AyIejJl.jpg?1" width="500" title="source: imgur.com" />  
+            <img src="https://i.imgur.com/3AyIejJl.jpg?1" width="300" title="source: imgur.com" />  
             <br>
-            <button id="small-btn">View All Plants</button>
+            <button id="welcome-btn">View All Plants</button>
         </form>
     </div>    
 <%- include('../partials/footer') %>

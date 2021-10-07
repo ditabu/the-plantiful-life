@@ -1,24 +1,17 @@
 * {
   box-sizing: border-box;
-  font-family: Helvetica;
+  font-family: 'Montserrat', sans-serif;
 }
 
 header {
   text-align: center;
   padding: 20px;
-  font-size: x-large;
   background-color: white;
   text-decoration: none;
 }
 
 .header h1 {
-  font-size: 50px;
-}
-
-.navbar {
-  font-size: 18px;
-  overflow: hidden;
-  background-color: olivedrab;
+  font-size: 40px;
 }
 
 .navbar a {
@@ -26,7 +19,7 @@ header {
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 10px 12px;
+  padding: 0px 16px;
   text-decoration: none;
 }
 
@@ -53,7 +46,6 @@ a:visited {
 
 #welcome {
   align-content: center;
-  font-family: Helvetica, Arial, sans-serif;
   position: fixed;
   top: 65%;
   left: 50%;
@@ -65,16 +57,25 @@ button:hover {
 }
 
 #splash-btn {
-  background-color: black;
-  color: white;
-  font-family: Helvetica, Arial, sans-serif;
-  border: none;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: olivedrab;
+  color: whitesmoke;
+  font-size: 24px;
+  padding: 16px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 1px;
+  text-align: center;
+  transition-duration: 0.3s
+}
+
+#splash-btn:hover {
+  background-color: rgb(36, 58, 36);
+  color: white;
 }
 
 input {
@@ -91,16 +92,26 @@ input:focus {
 
 #welcome {
   position: fixed;
-  top: 50%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+#welcome-btn {
+  background-color: rgb(36, 58, 36);
+  color: white;
+  border: none;
+  padding: 15px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px; 
+  width: 300px;
 }
 
 #small-btn {
   background-color: black;
   color: white;
-  font-family: Helvetica, Arial, sans-serif;
   border: none;
   padding: 15px 24px;
   text-align: center;
@@ -109,21 +120,35 @@ input:focus {
   font-size: 12px; 
 }
 
+.select-menu {
+  position: relative;
+
+
+}
 #new-form {
   text-align: center;
 }
 
+#plant-list {
+  text-align: center;
+}
 table {
   font-size: 20px;
+  align-content: center;
+  text-align: center;
 }
 
 table thead th {
   padding: 5px;
   border-bottom: 2px solid #424748;
+  align-content: center;
+  text-align: center;
 }
 
 table td {
   padding: 10px;
+  text-align: center;
+  align-content: center;
   text-align: center;
 }
 
