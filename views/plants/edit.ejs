@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 <% if (plant.plantOwner.toString()===currentUser.toString()){ %>
-    <form class="edit-form" action="/plants/<%= plant._id %>/edit" method="POST">
+    <form class="edit-form" action="/plants/<%= plant._id %>/edit/update" method="POST">
         <h1>EDIT PLANT DETAILS</h1>
         <br>
         <div>Plant Name:</div>
@@ -46,10 +46,11 @@
     </form>
     <% } %>    
     <% if (plant.plantOwner.toString()===currentUser.toString()){ %>
-      <button id="small-btn">See Changes</button>
+      <form class="edit-form" action="/plants/<%= plant._id %>/edit/update" method="POST"></form>
+      <a href ="/plants/<%=plant._id%>/edit"><div class="small-btn">Save Changes</div></a>
     <% } %> 
     <br>
-    <form id="edit-form" action="/plants" method="GET">  
+    <form id="edit-form" action="/plants/<%= plant._id %>" method="GET">  
       <button id="small-btn">View All Plants</button>
     </form>
 
