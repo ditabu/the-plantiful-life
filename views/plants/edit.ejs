@@ -1,0 +1,56 @@
+<%- include('../partials/header') %>
+<% if (plant.plantOwner.toString()===currentUser.toString()){ %>
+    <form class="edit-form" action="/plants/<%= plant._id %>/edit" method="GET"> "> 
+        <h1>EDIT PLANT DETAILS</h1>
+        <br>
+        <div>Plant Name:</div>
+            <input value="<%= plant.plantName %>" name="plantName">
+        <br>
+        <br>
+        <div>Plant Species:</div>
+            <input value="<%= plant.plantSpecies %>" name="plantSpecies">
+        <br>
+        <br>
+        <div>Light:</div>
+            <select value="<%= plant.light %>" name="light">
+              <option value="LOW">low</option>
+              <option value="MEDIUM">medium</option>
+              <option value="HIGH">high</option>
+            </select>
+        <br>
+        <br>    
+        <div>Water:</div>
+            <select value="<%= plant.water %>"name="water">
+              <option value="LOW">low</option>
+              <option value="MEDIUM">medium</option>
+              <option value="HIGH">high</option>
+            </select>
+        <br>
+        <br>   
+        <div>Groom:</div>
+            <select value="<%= plant.groom %>" name="groom">
+              <option value="LOW">low</option>
+              <option value="MEDIUM">medium</option>
+              <option value="HIGH">high</option>
+            </select>
+        <br>
+        <br>
+        <div>Climate:</div>
+            <select value="<%= plant.climate %>" name="climate">
+              <option value="COLD">cold</option>
+              <option value="DRY">dry</option>
+              <option value="HUMID">humid</option>
+            </select>
+        <br>
+        <br>
+    </form>
+    <% } %>    
+    <% if (plant.plantOwner.toString()===currentUser.toString()){ %>
+      <button id="small-btn">Edit</button>
+    <% } %> 
+    <br>
+    <form id="edit-form" action="/plants" method="GET">  
+      <button id="small-btn">View All Plants</button>
+    </form>
+
+<%- include('../partials/footer') %>    

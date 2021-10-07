@@ -5,7 +5,8 @@
             <thead>
               <tr>
                 <th>Plant Name</th>
-                <th>Plant<br>Species</th>
+                <th>Plant Species</th>
+                <th>Plantista</th>
               </tr>
             </thead>
             <tbody>
@@ -13,6 +14,7 @@
               <tr>
                 <td><%= p.plantName %></td>
                 <td><%= p.plantSpecies %></td>
+                <td><%= p.plantOwner %></td>
                 <td><a href="/plants/<%= p._id %>">DETAILS</a></td>
                 <td>
                   <% if (p.plantOwner.toString()===currentUser.toString()){ %>

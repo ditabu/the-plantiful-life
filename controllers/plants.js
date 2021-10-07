@@ -14,12 +14,12 @@ module.exports = {
 
 function edit(req, res) {
     console.log(req.body)
-    Plant.findByIdAndUpdate(req.params.id, req.body, function(err, plant) {
+    Plant.findById(req.params.id, req.body, function(err, plant) {
     console.log('edit plant: ', plant)
     let currentUser = req.user ? req.user._id : ''
       // Verify plant is "owned" by logged in user
     // res.render('plants/show', { plant, currentUser });
-    res.redirect(`/plants/${req.params.id}`)
+    res.redirect(`/plants/${req.params.id}/edit`)
     // res.redirect(`/plants/${req.params.id}`)
     });
 }
