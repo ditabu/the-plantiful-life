@@ -3,12 +3,36 @@
   font-family: Helvetica;
 }
 
+header {
+  text-align: center;
+  padding: 20px;
+  font-size: x-large;
+  background-color: white;
+  text-decoration: none;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
 .navbar {
   font-size: 18px;
+  overflow: hidden;
+  background-color: olivedrab;
+}
+
+.navbar a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 10px 12px;
+  text-decoration: none;
 }
 
 a {
   color: black;
+  text-decoration: none;
 } 
 a:hover {
   background-color: rgb(186, 194, 188); 
@@ -18,22 +42,10 @@ a:visited {
   color: rgb(91, 90, 90);
 }
 
-body {
-  margin: 0;
-  display: grid;
-  height: 100vh;
-  grid-gap: 5px;
-  font-family: Helvetica, Arial, sans-serif;
-  align-items: center;
-}
-
-main {
-  margin-top: 30px;
-}
 
 #splash {
   position: fixed;
-  top: 50%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
 
@@ -42,6 +54,10 @@ main {
 #welcome {
   align-content: center;
   font-family: Helvetica, Arial, sans-serif;
+  position: fixed;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 button:hover {
@@ -61,6 +77,14 @@ button:hover {
   position: absolute;
 }
 
+input {
+  width: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  text-align: left;
+}
+
 input:focus {
   background-color: olivedrab;
 }
@@ -71,5 +95,35 @@ input:focus {
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+#small-btn {
+  background-color: black;
+  color: white;
+  font-family: Helvetica, Arial, sans-serif;
+  border: none;
+  padding: 15px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px; 
+}
+
+#new-form {
+  text-align: center;
+}
+
+table {
+  font-size: 20px;
+}
+
+table thead th {
+  padding: 5px;
+  border-bottom: 2px solid #424748;
+}
+
+table td {
+  padding: 10px;
+  text-align: center;
 }
 
