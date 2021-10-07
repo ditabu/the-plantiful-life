@@ -14,9 +14,10 @@ module.exports = {
 
 function edit(req, res) {
     console.log(req.body, req.params, 'edit')
+    const currentUser = req.user ? req.user._id : ''
     Plant.findById(req.params.id, function(err, plant) {
         console.log(plant, 'edit plant')
-        res.render('plants/edit', { plant });
+        res.render('plants/edit', { plant, currentUser });
     });
 }
 
@@ -26,7 +27,7 @@ function deletePlant(req, res){
     
     Plant.deleteOne({_id: req.params.id}, function(err, plant) {
         console.log('deleted plant: ', plant)
-        let currentUser = req.user ? req.user._id : ''
+        const currentUser = req.user ? req.user._id : ''
         // if (!plant.plantOwner.equals(plantOwner._id)) return res.redirect('/plants');
         console.log('deleting a plant')
         res.redirect('/plants');
