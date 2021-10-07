@@ -1,27 +1,28 @@
 <%- include('../partials/header') %>
-<section>
-    <table id="plantList">
-        <thead>
-          <tr>
-            <th>Plant Name</th>
-            <th>Plant<br>Species</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% plants.forEach(function(p) { %>
-            <tr>
-              <td><%= p.plantName %></td>
-              <td><%= p.plantSpecies %></td>
-              <td><a href="/plants/<%= p._id %>">DETAILS</a></td>
-              <td>
-                <% if (p.plantOwner.toString()===currentUser.toString()){ %>
-                <form class="delete-form" method="POST" action="/plants/<%= p._id %>?_method=DELETE"> 
-                <button type="submit">X</button></form>
-              <% } %> 
-              </td> 
-            </tr>
-            <% }); %>
-          </tbody>
+    <section>
+        <h1>PLANT LIST</h1>
+        <table id="plantList">
+            <thead>
+              <tr>
+                <th>Plant Name</th>
+                <th>Plant<br>Species</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% plants.forEach(function(p) { %>
+              <tr>
+                <td><%= p.plantName %></td>
+                <td><%= p.plantSpecies %></td>
+                <td><a href="/plants/<%= p._id %>">DETAILS</a></td>
+                <td>
+                  <% if (p.plantOwner.toString()===currentUser.toString()){ %>
+                  <form class="delete-form" method="POST" action="/plants/<%= p._id %>?_method=DELETE"> 
+                  <button id="delete-btn"><img src="https://img.icons8.com/material/24/000000/delete-trash.png"/></button></form>
+                  <% } %> 
+                </td> 
+              </tr>
+                <% }); %>
+            </tbody>
         </table>  
-</section>              
+    </section>              
 <%- include('../partials/footer') %>

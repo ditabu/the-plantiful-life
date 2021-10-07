@@ -1,52 +1,52 @@
 <%- include('../partials/header') %>
-    <h1>What's In Yo Pot?</h1>
+    <h1>ADD PLANT DETAILS</h1>
     <form id="new-form" action="/plants" method="POST">
         <label>PLANT NAME</label>
         <br>
-        <input type="text" name="plantName">
+            <input type="text" name="plantName">
         <br>
         <br>
         <label>PLANT SPECIES</label>
         <br>
-        <input type="text" name="plantSpecies">
+            <input type="text" name="plantSpecies">
         <br>
         <br>
         <label>LIGHT</label>
         <br>
-        <select name="light">
-          <option value="LOW">LOW</option>
-          <option value="MEDIUM">MEDIUM</option>
-          <option value="HIGH">HIGH</option>
-        </select>
+            <select name="light">
+              <option value="LOW">LOW</option>
+              <option value="MEDIUM">MEDIUM</option>
+              <option value="HIGH">HIGH</option>
+            </select>
         <br>
         <br>
         <label>WATER</label>
         <br>
-        <select name="water">
-          <option value="LOW">LOW</option>
-          <option value="MEDIUM">MEDIUM</option>
-          <option value="HIGH">HIGH</option>
-        </select>
+            <select name="water">
+              <option value="LOW">LOW</option>
+              <option value="MEDIUM">MEDIUM</option>
+              <option value="HIGH">HIGH</option>
+            </select>
         <br>
         <br>
         <label>GROOM</label>
         <br>
-        <select name="groom">
-          <option value="LOW">LOW</option>
-          <option value="MEDIUM">MEDIUM</option>
-          <option value="HIGH">HIGH</option>
-        </select>
+            <select name="groom">
+              <option value="LOW">LOW</option>
+              <option value="MEDIUM">MEDIUM</option>
+              <option value="HIGH">HIGH</option>
+            </select>
         <br>
         <br>
         <label>CLIMATE</label>
         <br>
-        <select name="climate">
-          <option value="COLD">COLD</option>
-          <option value="DRY">DRY</option>
-          <option value="HUMID">HUMID</option>
-        </select>
+            <select name="climate">
+              <option value="COLD">COLD</option>
+              <option value="DRY">DRY</option>
+              <option value="HUMID">HUMID</option>
+            </select>
         <br>
         <br>
-        <input type="submit" value="Add New Plant">
-      </form>
+        <button id="small-btn">Add A New Plant</button>
+    </form>
 <%- include('../partials/footer') %>

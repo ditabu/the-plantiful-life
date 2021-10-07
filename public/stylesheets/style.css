@@ -1,4 +1,75 @@
-nav {
-  background-color: rgb(183, 186, 189);
-  
+* {
+  box-sizing: border-box;
+  font-family: Helvetica;
 }
+
+.navbar {
+  font-size: 18px;
+}
+
+a {
+  color: black;
+} 
+a:hover {
+  background-color: rgb(186, 194, 188); 
+}
+
+a:visited {
+  color: rgb(91, 90, 90);
+}
+
+body {
+  margin: 0;
+  display: grid;
+  height: 100vh;
+  grid-gap: 5px;
+  font-family: Helvetica, Arial, sans-serif;
+  align-items: center;
+}
+
+main {
+  margin-top: 30px;
+}
+
+#splash {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+#welcome {
+  align-content: center;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+button:hover {
+  background-color: rgb(94, 154, 106);
+}
+
+#splash-btn {
+  background-color: black;
+  color: white;
+  font-family: Helvetica, Arial, sans-serif;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  position: absolute;
+}
+
+input:focus {
+  background-color: olivedrab;
+}
+
+#welcome {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
