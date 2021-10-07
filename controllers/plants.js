@@ -13,12 +13,10 @@ module.exports = {
 };
 
 function edit(req, res) {
-    console.log(req.body, 'edit')
-    Plant.findByIdAndUpdate(req.params.id, req.body, function(err, plants) {
-    console.log(plants, 'edit plant')
-      // Verify plant is "owned" by logged in user
-    //   
-    res.render('plants/edit', { plants: plant.getOne(req.params.id) });
+    console.log(req.body, req.params, 'edit')
+    Plant.findById(req.params.id, function(err, plant) {
+        console.log(plant, 'edit plant')
+        res.render('plants/edit', { plant });
     });
 }
 
