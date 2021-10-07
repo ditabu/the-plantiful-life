@@ -19,7 +19,7 @@
         <br>
         <br>    
     <% if (plant.plantOwner.toString()===currentUser.toString()){ %>
-      <form class="edit-form" action="/plants/edit<%= plant._id %> " method="POST"> 
+      <form class="edit-form" action="/plants/<%= plant._id %> " method="POST"> 
       <button id="small-btn">Edit</button>
     <% } %> 
     </form>

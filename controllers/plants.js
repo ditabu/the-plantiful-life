@@ -13,16 +13,14 @@ module.exports = {
 };
 
 function edit(req, res) {
-    console.log(req.body)
-    Plant.findByIdAndUpdate(req.params.id, req.body, function(err) {
-    console.log(plant.id, 'edit plant ')
-    let currentUser = req.user ? req.user._id : ''
+    console.log(req.body, 'edit')
+    Plant.findByIdAndUpdate(req.params.id, req.body, function(err, plants) {
+    console.log(plants, 'edit plant')
       // Verify plant is "owned" by logged in user
-    res.render(`/plants/${req.params.id}/edit`, { plant: plant.getOne(req.params.id), currentUser });
+    res.render('plants/edit', { plants: plant.getOne(req.params.id) });
     });
-
-
 }
+
 
 function deletePlant(req, res){
     // if req.user equals plant findbyId if it matches, then redirect, and i need an edit
@@ -41,7 +39,8 @@ function show(req, res){
     //find a plant by ID to see details
     Plant.findById(req.params.id, function(err, plantDoc) {
         console.log(plantDoc, 'plant doc show')
-        let currentUser = req.user ? req.user._id : ''
+        const currentUser = req.user ? req.user._id : ''
+        console.log(req.user, currentUser)
         res.render('plants/show', { plantName: 'Plant Details', plant: plantDoc, currentUser });
     });
 }
