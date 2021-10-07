@@ -3,7 +3,7 @@ const plantistasCtrl = require('../controllers/plantistas');
 
 
 // GET /plantistas
-router.get('/plantistas', plantistasCtrl.index);
+router.get('/plantistas', isLoggedIn, plantistasCtrl.index);
 router.get('/plantistas/new', isLoggedIn, plantistasCtrl.new);
 router.post('/plants/new', isLoggedIn, plantistasCtrl.create);
 
