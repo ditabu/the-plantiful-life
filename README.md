@@ -1,8 +1,8 @@
 # App Title: The Plantiful Life
 
-I am a Plantista. I want to help build a community with other Plantistas who share a common interest in plants. Like having a pet, plants helped many get through this pandemic, be it in health and wellness, having a companion, and having something to nourish and watch grow. 
+I am a Plantista. I want to help build a community with other Plantistas who share a common interest in plants. Like having a pet, plants helped many get through this pandemic, be it in health and wellness, having a companion, or having something to nourish and watch grow. 
 
-The app is very simple to use so you can spend more time caring for our plant(s). You can add info about your plants to a list to store in one location ad, well as track the date and time you watered and groomed your plant in your own care log. You can also check out other Plantista's collections and care logs. 
+The Plantiful Life is a full stack web application developed with a simple user friendly experience in mind. It is clean and lightweight with a primary focus on tracking your plant's growth and maintenance. You have the capability to add info about your plant in a list to store in one location, as well as track the date and time you watered and groomed your plant in a care log. You can also check out other Plantista's collections and care logs to compare with yours. 
 
 ![alt text](theplantiful_life_spg.jpeg)
 
@@ -21,8 +21,9 @@ The app is very simple to use so you can spend more time caring for our plant(s)
 
 
 ## Getting Started 
-[The Plantiful Life](the-plantiful-life.herokuapp.com)
-[The Plantiful Life](https://trello.com/b/RUvHgZfg/project-2-the-plantiful-life)
+[The Plantiful Life](https://the-plantiful-life.herokuapp.com/)
+
+[Trello Planning](https://trello.com/b/RUvHgZfg/project-2-the-plantiful-life)
 
 
 **Next Steps**
