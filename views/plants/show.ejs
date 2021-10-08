@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
     <form class="details-form" action="/plants/<%= plant._id %> " method="POST"> 
         <h1>PLANT DETAILS</h1>
-        <section id="show-details">
+        <section>
           <div>Plant Name:</div>
           <div><%= plant.plantName %></div>
           <div>Plant Species:</div>
@@ -16,20 +16,19 @@
           <div><%= plant.climate %></div>
           <div><%= plant.plantOwner %></div>
       </section>
-        <br>
-        <br>    
+        <br>   
     <% if (plant.plantOwner.toString()===currentUser.toString()){ %>
         <a href ="/plants/<%=plant._id%>/edit"><div class="small-btn">Edit</div></a>
     <% } %> 
     <br> 
-    <br>
-    <br>   
+    <br>  
       <a href="/plants"><div class="small-btn">View All Plants</div></a>
     <br>
     <br>
-    <h2>CARE LOGS</h2>
-    <p>Keep your plants alive by logging in when you water and groom them. <br>Watch your plants git thrive and grow before your very eyes.</p>
-    <form id="care-log-form" method="POST" action="/plants/<%= plant._id %>">
+    <h2 id="carelogs">CARE LOGS</h2>
+    <p>Keep your plants alive by logging in when you water and groom them. <br><br>Watch your plants git thrive and grow before your very eyes.</p>
+    <br>
+    <form method="POST" action="/plants/<%= plant._id %>">
     <% if (plant.plantOwner.toString()===currentUser.toString()){ %>
       <label>Watered</label>
       <br> 
@@ -44,7 +43,8 @@
         <button class="small-btn">Add A New Care Log</button>
     <% } %> 
     </form>
-
+      <br>
+      <br>   
     <% if (plant.careLog.length) { %>
         <table>
           <thead>

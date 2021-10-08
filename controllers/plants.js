@@ -18,7 +18,6 @@ function updatePlant(req, res) {
     const currentUser = req.user ? req.user._id : ''
     Plant.findById(req.params.id, function(err, plant) {
         console.log(plant, 'find updated plant')
-        // res.sendStatus(200)
         res.redirect(`/plants/${req.params.id}`)
     });
 }
