@@ -16,10 +16,10 @@ module.exports = {
 function updatePlant(req, res) {
     console.log(req.body, req.params, 'update Plant')
     const currentUser = req.user ? req.user._id : ''
-    res.sendStatus(200)
     Plant.findById(req.params.id, function(err, plant) {
         console.log(plant, 'find updated plant')
-        // res.redirect('/plants/:id/edit/update', { plant, currentUser });
+        // res.sendStatus(200)
+        res.redirect(`/plants/${req.params.id}`)
     });
 }
 
