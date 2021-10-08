@@ -23,7 +23,7 @@ The Plantiful Life is a full stack web application developed with a simple user 
 ## Getting Started 
 [The Plantiful Life](https://the-plantiful-life.herokuapp.com/)
 
-[Trello Planning](https://trello.com/b/RUvHgZfg/project-2-the-plantiful-life)
+[Trello Planning](https://trello.com/invite/b/RUvHgZfg/8f24e3d5da6eba360f1f45f0d6b181b4/project-2-the-plantiful-life)
 
 
 **Next Steps**

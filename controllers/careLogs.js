@@ -6,7 +6,6 @@ module.exports = {
 
 function create(req, res){
     console.log(req.body, 'does this show up')
-
     //find the plant doc we want to add care log to
     //req.body is the carelog that we need to add to the plant doc
     //req.params.id - routes/carelogs id of the plant to add carelog to

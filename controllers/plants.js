@@ -16,8 +16,10 @@ module.exports = {
 function updatePlant(req, res) {
     console.log(req.body, req.params, 'update Plant')
     const currentUser = req.user ? req.user._id : ''
+    //find plant by id to make updates to only the user's plant
     Plant.findById(req.params.id, function(err, plant) {
         console.log(plant, 'find updated plant')
+        // send to plant
         res.redirect(`/plants/${req.params.id}`)
     });
 }
@@ -33,10 +35,12 @@ function edit(req, res) {
 
 
 function deletePlant(req, res){  
+    //find a plant by id that only logged in user can delete
     Plant.deleteOne({_id: req.params.id}, function(err, plant) {
         console.log('deleted plant: ', plant)
         const currentUser = req.user ? req.user._id : ''
         console.log('deleting a plant')
+        //redirect to plants index page
         res.redirect('/plants');
    }
 )};
@@ -48,6 +52,7 @@ function show(req, res){
         console.log(plantDoc, 'plant doc show')
         const currentUser = req.user ? req.user._id : ''
         console.log(req.user, currentUser)
+        //render show.ejs page that shows plant details
         res.render('plants/show', { plantName: 'Plant Details', plant: plantDoc, currentUser });
     });
 }
@@ -58,6 +63,7 @@ function index(req, res){
         // console.log(err, 'why is this an error')
         console.log(plantsDoc, 'plants doc')
         let currentUser = req.user ? req.user._id : ''
+        //render plants index.ejs page
         res.render('plants/index', { plants: plantsDoc, currentUser })
     })
 };
