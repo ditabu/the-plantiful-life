@@ -42,9 +42,11 @@
               <option value="HUMID">humid</option>
             </select>
         <br>
+        <br>
+        <br>
       </form>
         <form class="details-form" action="/plants/<%= plant._id %>/edit/update?_method=PUT" method="POST">
-        <input type="submit" value="Save Changes">
+          <button class="small-btn">Save Changes</button>
       </form>
         <br>
     
@@ -52,8 +54,8 @@
     <% if (plant.plantOwner.toString()===currentUser.toString()){ %>
     <% } %> 
     <br>
-    <form id="edit-form" action="/plants/<%= plant._id %>" method="GET">  
-      <button id="small-btn">View All Plants</button>
+    <form id="edit-form" action="/plants/<%= plant._id %>" method="GET">
+      <button class="small-btn">View All Plants</button>
     </form>
 
 <%- include('../partials/footer') %>    

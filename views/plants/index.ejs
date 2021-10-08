@@ -19,7 +19,7 @@
                 <td>
                   <% if (p.plantOwner.toString()===currentUser.toString()){ %>
                   <form class="delete-form" method="POST" action="/plants/<%= p._id %>?_method=DELETE"> 
-                  <button id="delete-btn"><img src="https://img.icons8.com/material/24/000000/delete-trash.png"/></button></form>
+                  <button class="delete-btn"><img src="https://img.icons8.com/material/24/000000/delete-trash.png"/></button></form>
                   <% } %> 
                 </td> 
               </tr>

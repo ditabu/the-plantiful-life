@@ -109,7 +109,7 @@ input:focus {
   width: 300px;
 }
 
-#small-btn {
+.small-btn {
   background-color: black;
   color: white;
   border: none;
@@ -119,6 +119,7 @@ input:focus {
   display: inline-block;
   font-size: 12px; 
 }
+
 
 .select-menu {
   position: relative;
