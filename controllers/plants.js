@@ -32,13 +32,10 @@ function edit(req, res) {
 }
 
 
-function deletePlant(req, res){
-    // if req.user equals plant findbyId if it matches, then redirect, and i need an edit
-    
+function deletePlant(req, res){  
     Plant.deleteOne({_id: req.params.id}, function(err, plant) {
         console.log('deleted plant: ', plant)
         const currentUser = req.user ? req.user._id : ''
-        // if (!plant.plantOwner.equals(plantOwner._id)) return res.redirect('/plants');
         console.log('deleting a plant')
         res.redirect('/plants');
    }
