@@ -17,7 +17,7 @@ function updatePlant(req, res) {
     console.log(req.body, req.params, 'update Plant')
     const currentUser = req.user ? req.user._id : ''
     //find plant by id to make updates to only the user's plant
-    Plant.findById(req.params.id, function(err, plant) {
+    Plant.findByIdAndUpdate(req.params.id, function(err, plant) {
         console.log(plant, 'find updated plant')
         // send to plant
         res.redirect(`/plants/${req.params.id}`)

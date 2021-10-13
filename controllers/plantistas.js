@@ -24,7 +24,6 @@ function index(req, res, next) {
     // Passing search values, name & sortKey, for use in the EJS
     res.render('plantistas/index', {
       plantistas,
-      user: req.user,
       name: req.query.name,
       sortKey
     });
